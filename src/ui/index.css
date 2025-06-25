@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  all: unset;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/src/assets/fonts/var.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+/* Animation for the decorations around the Google logo */
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Stagger the animations */
+.animate-pulse:nth-child(1) {
+  animation-delay: 0s;
+}
+.animate-pulse:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.animate-pulse:nth-child(3) {
+  animation-delay: 1s;
+}
+.animate-pulse:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Hide the default Google search box when our custom one is active */
+.gsc-control-cse,
+.gsc-results-wrapper-overlay,
+.gsc-modal-background-image {
+  display: none !important;
+}
+/* Add this global CSS */
+webview {
+  pointer-events: auto !important;
+}
+
+#appContainer {
+  height: 100vh;
+  overflow-x: hidden; /* Full viewport height */
+}
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Ensure Scrolling Still Works */
+#appContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll; /* Scrolling allowed but scrollbar hidden */
+  overflow-x: hidden;
+}

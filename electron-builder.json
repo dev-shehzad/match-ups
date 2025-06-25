@@ -1,0 +1,47 @@
+ {
+  "appId": "com.electron.matchups",
+  "productName": "Matchups™",
+  "artifactName": "Matchups™.${ext}",
+  "icon": "assets/app-icon.ico",
+  "directories": {
+    "output": "release/${version}"
+  },
+  "electronVersion": "36.2.1",
+  "electronDownload": {
+    "version": "36.2.1"
+  },
+  "files": ["dist-electron", "dist-react", "package.json", "assets/app-icon.ico","assets"],
+  
+  "mac": {
+    "icon": "assets/app-icon.ico",
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": ["dmg"]
+  },
+  "win": {
+    "icon": "assets/app-icon.ico",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "artifactName": "${productName}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false,
+    "installerIcon": "assets/app-icon.ico",
+    "uninstallerIcon": "assets/app-icon.ico",
+    "installerHeaderIcon": "assets/app-icon.ico",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Matchups™"
+  },
+  "publish": {
+    "provider": "generic",
+    "channel": "latest",
+    "url": "https://github.com/electron/electron"
+  }
+}
